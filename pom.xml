@@ -294,6 +294,13 @@
     </repository>
   </repositories>
 
+  <distributionManagement>
+    <repository>
+      <id>myMavenrepo.write</id>
+      <url>https://mymavenrepo.com/repo/uHFLssUowmrSuLA0VBfn/</url>
+    </repository>
+  </distributionManagement>
+
   <pluginRepositories>
     <pluginRepository>
       <id>spring-snapshots</id>
