@@ -20,7 +20,7 @@ Open pom.xml and update the repositories section so that it looks like:
    <url>https://jcenter.bintray.com</url>
  </repository>
 </repositories>
-This will make that the dependencies for the java project are resolved from Bintray JCenter
+This will make sure that all the dependencies for the java project are resolved from Bintray JCenter
 
 Start Docker as we will be using a Jenkins image to spin up a Jenkins container. Use Alpine Jenkins image available here - https://github.com/liatrio/alpine-jenkins. Spin up this container by:
 $ docker run -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock liatrio/jenkins-alpine
