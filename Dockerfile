@@ -1,4 +1,3 @@
-FROM openjdk:8
-ADD /target/spring-petclinic-2.4.3.jar spring-petclinic.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "spring-petclinic.jar"]
+FROM anapsix/alpine-java
+COPY /target/spring-petclinic-2.4.3.jar /home/spring-petclinic-2.4.3.jar
+CMD ["java","-jar","/home/spring-petclinic-2.4.3.jar"]

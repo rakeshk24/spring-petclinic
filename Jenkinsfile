@@ -1,33 +1,14 @@
 pipeline {
-    agent any
-
+    agent none
     stages {
-        stage ('Compile Stage'){
-            steps{
-                withMaven(maven : 'Maven 3.6.3') {
-                    sh 'mvn clean compile'
-                }
+        stage('Maven Install') {
+            agent {
+                docker {
+                    image 'maven:3.5.0'
+
             }
-        }
-//         stage ('Test Stage'){
-//             steps{
-//                 withMaven(maven : 'Maven 3.6.3') {
-//                     sh 'mvn test'
-//                 }
-//             }
-//         }
-        stage ('Install Stage'){
-            steps{
-                withMaven(maven : 'Maven 3.6.3') {
-                    sh 'mvn clean install'
-                }
-            }
-        }
-        stage('Docker Build') {
-            agent any
             steps {
-                sh 'docker build -t spring-petclinic:latest .'
+                sh 'mvn clean install'
             }
         }
     }
-}
