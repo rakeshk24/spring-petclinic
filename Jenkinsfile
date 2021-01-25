@@ -9,13 +9,13 @@ pipeline {
                 }
             }
         }
-        stage ('Test Stage'){
-            steps{
-                withMaven(maven : 'Maven 3.6.3') {
-                    sh 'mvn test'
-                }
-            }
-        }
+//         stage ('Test Stage'){
+//             steps{
+//                 withMaven(maven : 'Maven 3.6.3') {
+//                     sh 'mvn test'
+//                 }
+//             }
+//         }
         stage ('Install Stage'){
             steps{
                 withMaven(maven : 'Maven 3.6.3') {
